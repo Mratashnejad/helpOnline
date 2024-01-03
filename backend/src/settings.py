@@ -37,6 +37,36 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+
+    #apps
+
+    "members",
+
+
+    #rest-api
+    "rest_auth",
+    "rest_framework",
+
+
+    #Django sites framework is required
+    'rest_auth',
+    'rest_framework',
+    'rest_framework.authtoken',
+ 
+    #Providers
+    'django.contrib.sites',
+
+    #allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    #social auth
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.instagram',
+    'allauth.socialaccount.providers.github',
 ]
 
 MIDDLEWARE = [
