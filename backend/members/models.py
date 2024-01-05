@@ -1,2 +1,36 @@
-from django.db import models
+from django.core.checks.messages import Error
+from django.db  import models
+from django.contrib.auth.models import User
+from django.db.models.deletion import CASCADE
+from django.urls import reverse
+
+expertList=(
+    ('Dr' , 'Doctors'),
+    ('En' , 'Engineers'),
+    ('Law', 'Lawyers'),
+)
+
+
+
+
+#the information of each user for thair Profile
+
+class information(models.Model):
+    id                 = models.AutoField(primary_key=True)
+    extra_phone_number = models.CharField(max_length=14)
+    email              = models.EmailField()
+    biography          = models.CharField(max_length=5000)
+
+
+#the persons who giving advice to thair customers
+
+class Advoicers(models.Model):
+
+    id                  = models.AutoField(primary_key=True)
+    name                = models.CharField(max_length=255)
+    family_name         = models.CharField(max_length=255)
+    phone_number        = models.CharField(max_length=14)
+    experts             = models.ForeignKey(expertList,on_delete=models.CASCADE)
+
+
 
