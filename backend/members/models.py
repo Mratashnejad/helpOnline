@@ -1,13 +1,13 @@
 from django.core.checks.messages import Error
 from django.db  import models
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 from django.urls import reverse
 
-expertList=(
-    ('Dr' , 'Doctors'),
-    ('En' , 'Engineers'),
-    ('Law', 'Lawyers'),
+ExpertList=(
+    ('Dr', 'Doctors'),
+    ('En', 'Engineers'),
+    ('La', 'Lawyers'),
 )
 
 
@@ -30,7 +30,7 @@ class Advoicers(models.Model):
     name                = models.CharField(max_length=255)
     family_name         = models.CharField(max_length=255)
     phone_number        = models.CharField(max_length=14)
-    experts             = models.ForeignKey(expertList,on_delete=models.CASCADE)
+    #experts             = models.ForeignKey(ExpertList, on_delete=models.CASCADE)
 
 
 

@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-t6au$36ot)3)&gb$@3d3gr%u@do!9&8qwi-ox2d5yto0u!7vry
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -37,36 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
-
     #apps
-
     "members",
 
-
-    #rest-api
-    "rest_auth",
-    "rest_framework",
-
-
-    #Django sites framework is required
-    'rest_auth',
-    'rest_framework',
-    'rest_framework.authtoken',
- 
-    #Providers
-    'django.contrib.sites',
-
-    #allauth
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-
-    #social auth
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.instagram',
-    'allauth.socialaccount.providers.github',
 ]
 
 MIDDLEWARE = [
