@@ -31,6 +31,7 @@ class Advoicers(models.Model):
     family_name         = models.CharField(max_length=255)
     phone_number        = models.CharField(max_length=14)
     #experts             = models.ForeignKey(ExpertList, on_delete=models.CASCADE)
+    
 
 
 
