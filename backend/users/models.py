@@ -8,7 +8,7 @@ class CustomUserModelManager(BaseUserManager):
         #create a custom user with the given fields
 
         user = self.model(
-            usrname = username,
+            username = username,
             email = self.normalize_email(email),
         )
 
@@ -27,13 +27,14 @@ class CustomUserModelManager(BaseUserManager):
         user.save(using = self._db)
 
         return user
+    
 class CustomUserModel(AbstractBaseUser,PermissionsMixin):
     userId          = models.CharField(max_length = 16, default = uuid4 , primary_key = True , editable = False)
     username        = models.CharField(max_length = 16, unique = True , null = False , blank = False)
     email           = models.EmailField(max_length = 100,unique = True , null = False , blank = False)
 
     USERNAME_FIELD  = "username"
-    REQUIRED_FIELD  = "email"
+    REQUIRED_FIELDS  = ["email"]
 
     active          = models.BooleanField(default = True)
     is_staff        = models.BooleanField(default = False)
